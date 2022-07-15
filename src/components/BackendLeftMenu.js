@@ -20,6 +20,30 @@ const BackendLeftMenu = () => {
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
     </li>
+
+   
+
+    <li class="nav-item">
+      <a class="nav-link" href="tables.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Entradas Dinero</span></a>
+    </li>
+    
+    
+    <li class="nav-item">
+      <a class="nav-link" href="tables.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Gastos</span></a>
+    </li>
+
+    
+
+    
+    <li class="nav-item">
+      <a class="nav-link" href="tables.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Chat</span></a>
+    </li>
   
     
     <hr class="sidebar-divider"/>
@@ -29,6 +53,14 @@ const BackendLeftMenu = () => {
       <a class="nav-link" href="tables.html">
         <i class="fas fa-fw fa-table"></i>
         <span>Fincas</span></a>
+    </li>
+
+    
+
+    <li class="nav-item">
+      <a class="nav-link" href="tables.html">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Administración</span></a>
     </li>
   
     
