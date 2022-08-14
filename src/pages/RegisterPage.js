@@ -10,25 +10,25 @@ export default function RegisterPage() {
       <form >
         <div className="form-floating">
           <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
-          <label for="floatingInput">Direección de Correo</label>
+          <label>Direección de Correo</label>
         </div>
 
         
         <br></br>
         <div className="form-floating">
           <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
-          <label for="floatingPassword">Contraseña</label>
+          <label>Contraseña</label>
         </div>
 
         <br></br>
         <div className="form-floating">
           <input type="passwordr" className="form-control" id="floatingPassword" placeholder="Password"/>
-          <label for="floatingPassword">Repita la Contraseña</label>
+          <label>Repita la Contraseña</label>
         </div>
 
         <br></br>
-        <div class="form-floating">
-                    <select class="form-select" id="exampleSelect1">
+        <div className="form-floating">
+                    <select className="form-select" id="exampleSelect1">
                       <option>Seleccione la Finca</option>  
                       <option>Valencia 46</option>
                       <option>Quart 7</option>

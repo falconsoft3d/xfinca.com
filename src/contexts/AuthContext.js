@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { auth } from './../firebase/firebaseConfig';
+import {auth} from './../firebase/firebaseConfig';
 import { onAuthStateChanged } from "firebase/auth";
 
 // Creamos el contexto;
@@ -12,11 +12,9 @@ const useAuth = () => {
 
 const AuthProvider = ({children}) => {
 	const [user, setUser] = useState();
-	
 	// Creamos un state para saber cuando termina de 
 	// cargar la comprobacion de onAuthStateChanged
 	const [loading, setLoading] = useState(true);
-
 	// Efecto para ejecutar la comprobacion una sola vez.
 	useEffect(() => {
 		// Comprobamos si hay un usuario.
@@ -29,7 +27,7 @@ const AuthProvider = ({children}) => {
 	}, []);
 
 	return (
-		<AuthContext.Provider value={{user: user}}>
+		<AuthContext.Provider value={{usuario: user}}>
 			{/* Solamente retornamos los elementos hijos cuando no este cargando. 
 			De esta forma nos aseguramos de no cargar el resto de la app hasta que el usuario haya sido establecido.
 			
