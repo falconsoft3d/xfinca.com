@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import db from "./../../firebase/firebaseConfig";
+import { db } from "./../../firebase/firebaseConfig";
 import {collection, onSnapshot} from 'firebase/firestore';
 
 export default function HomeList() {

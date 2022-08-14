@@ -1,5 +1,6 @@
 import 'bootswatch/dist/flatly/bootstrap.min.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
 import Expenses from './pages/Expenses';
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -19,7 +20,9 @@ function App() {
                 }/>  
 
             <Route path="/expenses" element={
-                    <Expenses />
+                    <PrivateRoute>
+                      <Expenses />
+                    </PrivateRoute>
                 }/>   
 
               <Route path="/" element={

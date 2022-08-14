@@ -1,7 +1,10 @@
 import React from 'react'
+import DashboardLayout from '../layout/DashboardLayout'
 
 export default function Expenses() {
   return (
-    <div>Expenses</div>
+    <DashboardLayout>
+        <div>Expenses</div>
+    </DashboardLayout>
   )
 }
