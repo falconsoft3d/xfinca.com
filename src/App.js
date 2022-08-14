@@ -1,10 +1,27 @@
-import 'bootswatch/dist/slate/bootstrap.min.css';
-
+import 'bootswatch/dist/flatly/bootstrap.min.css';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
     <>
-      <h1>XFinca</h1>
+      <BrowserRouter>
+            <Routes>
+            <Route path="/login" element={
+                    <LoginPage />
+                }/>
+
+            <Route path="/register" element={
+                    <RegisterPage />
+                }/>   
+
+              <Route path="/" element={
+                    <HomePage />
+                }/>
+            </Routes>
+      </BrowserRouter>
     </>
   );
 }
