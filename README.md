@@ -5,7 +5,7 @@ Plataforma para la administración de condominios o Fincas.
 $ npm start
 ```
 
-# Mis Datos de contacto
+# Mis datos de contacto
 ```
 Marlon Falcón Hernández | España | Madrid
 * ERP, CRM y Software: https://www.marlonfalcon.com
