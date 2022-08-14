@@ -26,11 +26,13 @@ export default function RegisterPage() {
           <label for="floatingPassword">Repita Contraseña</label>
         </div>
         <br></br>
-        <div className="form-floating">
-          <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
-          <label for="floatingInput">Finca</label>
+        <div class="form-floating">
+                    <select class="form-select" id="exampleSelect1">
+                      <option>Seleccione la Finca</option>  
+                      <option>Valencia 46</option>
+                      <option>Quart 7</option>
+                </select>
         </div>
-
         <br></br>
         <button className="w-100 btn btn-lg btn-primary" type="submit">Registarse</button>
         <div className='mt-4'>
