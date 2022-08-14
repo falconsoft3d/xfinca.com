@@ -1,6 +1,12 @@
 # XFinca
 Plataforma para la administración de condominios o Fincas.
 
+link
+```
+https://xfinca-54809.firebaseapp.com/
+https://xfinca.com
+```
+
 ```
 $ npm start
 ```
