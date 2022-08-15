@@ -8,6 +8,7 @@ import RegisterPage from "./pages/RegisterPage";
 import {AuthProvider} from './contexts/AuthContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
@@ -28,7 +29,11 @@ function App() {
                       <PrivateRoute>
                         <Expenses />
                       </PrivateRoute>
-                  }/>   
+                  }/>  
+
+              <Route path="/contact" element={
+                        <ContactPage />
+                  }/>  
 
                 <Route path="/" element={
                       <HomePage />

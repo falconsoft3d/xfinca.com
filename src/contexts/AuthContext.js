@@ -18,16 +18,16 @@ const AuthProvider = ({children}) => {
 	// Efecto para ejecutar la comprobacion una sola vez.
 	useEffect(() => {
 		// Comprobamos si hay un usuario.
-		const cancelarSuscripcion = onAuthStateChanged(auth, (user) => {
+		const cancelSubscription = onAuthStateChanged(auth, (user) => {
 			setUser(user);
 			setLoading(false);
 		});
 
-		return cancelarSuscripcion;
+		return cancelSubscription;
 	}, []);
 
 	return (
-		<AuthContext.Provider value={{usuario: user}}>
+		<AuthContext.Provider value={{user: user}}>
 			{/* Solamente retornamos los elementos hijos cuando no este cargando. 
 			De esta forma nos aseguramos de no cargar el resto de la app hasta que el usuario haya sido establecido.
 			
