@@ -7,7 +7,7 @@ export default function HomeLayout(props) {
     <>
         
         <div className="container py-3">
-        <HomeHeader />
+        <HomeHeader/>
     
       <main>
          {children}

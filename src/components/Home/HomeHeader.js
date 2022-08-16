@@ -1,21 +1,10 @@
 import React from 'react';
-import {auth} from './../../firebase/firebaseConfig';
-import {signOut} from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
 import {useAuth} from './../../contexts/AuthContext';
+import BtnLogout from '../BtnLogout';
 
 export default function HomeHeader() {
-    const navigate = useNavigate();
     const {user} = useAuth();
 
-    const logout = async() => {
-		try {
-			await signOut(auth);
-			navigate('/login');
-		} catch(error){
-			console.log(error);
-		}
-	}
     return (
     <header>
         <div className="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
@@ -41,8 +30,7 @@ export default function HomeHeader() {
             <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Gastos</a>
             <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Cobros</a>
             <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Mensajes</a>
-            <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Administración</a>
-            <a className="py-2 text-dark text-decoration-none" onClick={logout} >Cerrar sesión</a>
+            <BtnLogout/>
             
           </nav>
         }   

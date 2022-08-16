@@ -4,7 +4,7 @@ export default function LeftMenu() {
   return (
     <nav id="sidebar">
             <div className="sidebar-header">
-                <h3>XFinca</h3>
+                <a href='/'><h3>XFinca</h3></a>
             </div>
 
             <ul className="list-unstyled components">
