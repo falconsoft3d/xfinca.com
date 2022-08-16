@@ -37,7 +37,11 @@ export default function HomeHeader() {
           <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
             <a className="me-3 py-2 text-dark text-decoration-none" href="/">Inicio</a>
             <a className="me-3 py-2 text-dark text-decoration-none" href="/contact">Contacto</a>
+            <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Panel</a>
             <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Gastos</a>
+            <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Cobros</a>
+            <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Mensajes</a>
+            <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Administración</a>
             <a className="py-2 text-dark text-decoration-none" onClick={logout} >Cerrar sesión</a>
             
           </nav>
