@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ExpensesForm from './ExpensesForm'
 import {db} from "./../../../firebase/firebaseConfig";
-import {collection, onSnapshot} from 'firebase/firestore';
+import {collection, onSnapshot, deleteDoc, doc} from 'firebase/firestore';
+import { toast } from 'react-toastify';
 
 export default function ExpensesList() {
   const [expenses, setExpenses] = useState([])
@@ -21,6 +22,22 @@ export default function ExpensesList() {
     );
 }, []);
 
+
+const deleteItem = async(id) => {
+    try {
+        await deleteDoc(doc(db, 'expenses', id));
+        toast("Se eliminó correctamente");
+
+    } catch(error){
+        console.log('Hubo un error al intentar eliminar el usuario')
+        console.log(error);
+    }
+}
+
+
+
+
+
   return (
     <>
     <div class="row">
@@ -38,7 +55,7 @@ export default function ExpensesList() {
             <tr>
                 <th>Nombre</th>
                 <th>Fecha</th>
-                <th>Monto (EUR)</th>
+                <th>Monto</th>
                 <th>Comprobante</th>
                 <th>Acciones</th>
             </tr>
@@ -47,12 +64,12 @@ export default function ExpensesList() {
         {expenses.map((item) => (
             <tr key={item.id}>
                 <td>{item.name}</td>
-                <td>12:12:12</td>
-                <td>{item.amount}</td>
+                <td>1</td>
+                <td>{item.amount} €</td>
                 <td><a className="btn btn-primary">Ver</a></td>
                 <td>
-                           <button className="btn btn-warning mx-1">Editar</button>
-                           <button className="btn btn-danger mx-1">Eliminar</button>
+                           {/* <button className="btn btn-warning mx-1">Editar</button> */}
+                           <button onClick={() => deleteItem(item.id)} className="btn btn-danger mx-1">Eliminar</button>
                 </td>
             </tr>
             ))}

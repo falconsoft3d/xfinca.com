@@ -32,7 +32,7 @@ export default function ExpensesForm() {
                           <input type="text" class="form-control"
                                  name="name"
                                  value={name}
-                                 onChange={(e) => setName(e.target.value)}
+                                 onChange={(e) => setName(e.target.value)} required
                                  id="exampleInputPassword1" placeholder="Reparación" />
                         </div>
 
@@ -41,7 +41,7 @@ export default function ExpensesForm() {
                           <input type="number" class="form-control" 
                                   id="exampleInputPassword1"
                                   name="amount"
-                                  value={amount}
+                                  value={amount} required
                                   onChange={(e) => setAmount(e.target.value)}
                                   placeholder="100" />
                         </div>
