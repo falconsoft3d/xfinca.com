@@ -12,8 +12,18 @@ import ContactPage from './pages/ContactPage';
 import Charges from './pages/Charges';
 import Messages from './pages/Messages';
 import Account from './pages/Account';
+import $ from 'jquery'
+import { useEffect } from "react";
 
 function App() {
+  /*
+  useEffect(() => {
+    $('#example').DataTable();
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        $(this).toggleClass('active');
+    });
+  }) */
   return (
     <>
     <AuthProvider>
