@@ -14,7 +14,8 @@ import Messages from './pages/Messages';
 import Account from './pages/Account';
 // import $ from 'jquery';
 // import { useEffect } from "react";
-
+import { Provider } from 'react-redux';
+import { store } from './store';
 function App() {
   /*
   useEffect(() => {
@@ -26,52 +27,54 @@ function App() {
   }) */
   return (
     <>
-    <AuthProvider>
-        <BrowserRouter>
-        <ToastContainer/>
-              <Routes>
-              <Route path="/login" element={
-                      <LoginPage />
-                  }/>
+    <Provider store={ store }>
+      <AuthProvider>
+          <BrowserRouter>
+          <ToastContainer/>
+                <Routes>
+                <Route path="/login" element={
+                        <LoginPage />
+                    }/>
 
-              <Route path="/register" element={
-                      <RegisterPage />
-                  }/>  
+                <Route path="/register" element={
+                        <RegisterPage />
+                    }/>  
 
-              <Route path="/expenses" element={
-                      <PrivateRoute>
-                        <Expenses />
-                      </PrivateRoute>
-                  }/> 
+                <Route path="/expenses" element={
+                        <PrivateRoute>
+                          <Expenses />
+                        </PrivateRoute>
+                    }/> 
 
-              <Route path="/charges" element={
-                      <PrivateRoute>
-                        <Charges />
-                      </PrivateRoute>
-                  }/>
+                <Route path="/charges" element={
+                        <PrivateRoute>
+                          <Charges />
+                        </PrivateRoute>
+                    }/>
 
-              <Route path="/messages" element={
-                      <PrivateRoute>
-                        <Messages />
-                      </PrivateRoute>
-                  }/>
+                <Route path="/messages" element={
+                        <PrivateRoute>
+                          <Messages />
+                        </PrivateRoute>
+                    }/>
 
-              <Route path="/account" element={
-                      <PrivateRoute>
-                        <Account />
-                      </PrivateRoute>
-                  }/>  
+                <Route path="/account" element={
+                        <PrivateRoute>
+                          <Account />
+                        </PrivateRoute>
+                    }/>  
 
-              <Route path="/contact" element={
-                        <ContactPage />
-                  }/>  
+                <Route path="/contact" element={
+                          <ContactPage />
+                    }/>  
 
-                <Route path="/" element={
-                      <HomePage />
-                  }/>
-              </Routes>
-        </BrowserRouter>
-      </AuthProvider>
+                  <Route path="/" element={
+                        <HomePage />
+                    }/>
+                </Routes>
+          </BrowserRouter>
+        </AuthProvider>
+       </Provider>
     </>
   );
 }

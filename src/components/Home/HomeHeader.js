@@ -1,9 +1,11 @@
-import React , {useEffect, useState} from 'react';
+import React from 'react';
 import {useAuth} from './../../contexts/AuthContext';
 import BtnLogout from '../BtnLogout';
+// import GlobalContext from '../../contexts/GlobalContext';
 
 export default function HomeHeader() {
     const {user} = useAuth();
+    // const { global } = useContext(GlobalContext);
 
     return (
     <header>

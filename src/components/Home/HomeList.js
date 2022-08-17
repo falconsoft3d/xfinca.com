@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import { db } from "./../../firebase/firebaseConfig";
 import {collection, onSnapshot} from 'firebase/firestore';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateId } from '../../store';
 
 export default function HomeList() {
-  const [buildings, setBuildings] = useState([])
-  const [building, setBuilding] = useState()
+  const [buildings, setBuildings] = useState([]);
+  // Redux 
+  const { id } = useSelector(state => state.building);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     onSnapshot(
@@ -23,6 +27,7 @@ export default function HomeList() {
 
 const handleClick = (item) => {
   console.log('=>:', item.id);
+  dispatch(updateId(item.id))
 };
 
 
@@ -31,7 +36,7 @@ const handleClick = (item) => {
     <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
           {buildings.map((item) => (
           <div className="col" key={item.id}>
-             <div className={`card mb-4 rounded-3 shadow-sm  ${building !== item.id ? "classname" : "text-white bg-success"}`}>
+             <div className={`card mb-4 rounded-3 shadow-sm  ${id !== item.id ? "classname" : "text-white bg-success"}`}>
               <div className="card-header py-3">
                 <h4 className="my-0 fw-normal">{item.name}</h4>
               </div>
@@ -41,7 +46,7 @@ const handleClick = (item) => {
                   <li>{item.street} {item.number}</li>
                   <li>{item.city}</li>
                 </ul>
-                <button type="button" onClick={()=>handleClick("1")} className="w-100 btn btn-lg btn-outline-primary">Entrar</button>
+                <button type="button" onClick={()=>handleClick(item)} className="w-100 btn btn-lg btn-outline-primary">Entrar</button>
               </div>
             </div>
           </div>
