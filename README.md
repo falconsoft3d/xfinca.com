@@ -1,13 +1,13 @@
 # XFinca
-Plataforma para la administración de condominios o Fincas.
+Plataforma para la administración de condominios o Fincas. Hecha con React y Firebase.
 
-# link
+# link
 ```
 https://xfinca-com.vercel.app
 https://xfinca.com
 ```
 
-# Comandos
+# Comandos
 ```
 $ npm start
 ```
@@ -16,9 +16,6 @@ $ npm start
 ```
 $ React, Firebase, Reduxjs/toolkit
 ```
-
-
-
 
 # Mis datos de contacto
 ```
