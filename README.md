@@ -19,3 +19,8 @@ Marlon Falcón Hernández | España | Madrid
 » Github: https://github.com/falconsoft3d
 » linkedin: https://linkedin.com/in/marlon-falcón-3a2aa9a4
 ```
+
+# Tareas
+```
+[ ] - Un usuario puede tener varias fincas.   
+```
