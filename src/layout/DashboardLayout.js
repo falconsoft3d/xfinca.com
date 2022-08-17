@@ -8,7 +8,7 @@ import {db} from "../firebase/firebaseConfig";
 
 export default function DashboardLayout(props) {
   const {children} = props;
-  const [building, setBuilding] = useState("-")
+  const [building, setBuilding] = useState("Cargando ...")
   const { id } = useSelector(state => state.building);
 
 
