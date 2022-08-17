@@ -29,3 +29,39 @@ Marlon Falcón Hernández | España | Madrid
 [ ] - Poder cambiar la contraseña
 [ ] - Deploy
 ```
+
+# Code Sample [ Firebase read list of documento with query ]
+```
+const myquery = query(
+        collection(db, 'expenses'),
+        where('building_id', '==', id),
+        orderBy('name', 'desc')
+    );  
+
+  useEffect(() => {
+    onSnapshot(myquery,
+        (snapshot) => {
+            const data = snapshot.docs.map((documento) => {
+                return {...documento.data(), id: documento.id}
+            })
+            setExpenses(data);
+        },
+        (error) => {
+            console.log(error);
+        }
+    );
+}, []);
+```
+
+# Code Sample [ Firebase load one document]
+```
+useEffect(() => {
+       const docRef = doc(db, 'buildings', id)
+       
+       onSnapshot(docRef, (doc) => {
+            // console.log(doc.data(), doc.id)
+            setBuilding(doc.data().name)
+       });
+    },[id]);
+```
+
