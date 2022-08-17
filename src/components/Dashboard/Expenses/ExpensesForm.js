@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "./../../../firebase/firebaseConfig";
+import { db, storage } from "./../../../firebase/firebaseConfig";
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
 import {useAuth} from './../../../contexts/AuthContext';
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export default function ExpensesForm() {
   // let defaultDate = new Date()
@@ -12,6 +13,8 @@ export default function ExpensesForm() {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState(0);
   const [date, setDate] = useState('');
+  const [fileURL, setFileURL] = useState(null); 
+
   const { id } = useSelector(state => state.building);
   const { user } = useAuth();
 
@@ -22,7 +25,8 @@ export default function ExpensesForm() {
       amount: amount,
       building_id : id,
       user_id : user.uid,
-      date: date
+      date: date,
+      url: fileURL
   }
     try {
         const docRef = await addDoc(collection(db, "expenses"), data);
@@ -32,6 +36,17 @@ export default function ExpensesForm() {
     }
     setName("");
     setAmount("");
+}
+
+const onFileChange = async (e) => {
+  // Subimos la Imagen
+  const file = e.target.files[0]
+  const storageRef = ref(storage, file.name)
+  await uploadBytes(storageRef, file).then((snapshot) => {
+      console.log('Uploaded file!');
+  });
+  const url = await getDownloadURL(storageRef)
+  setFileURL(url)
 }
 
   return (
@@ -65,6 +80,11 @@ export default function ExpensesForm() {
                                   name="date"
                                   value={date} required
                                   onChange={(e) => setDate(e.target.value)} />
+                        </div>
+
+                        <div className="form-group">
+                           <label  className="form-label mt-4">Adjunto</label>
+                           <input type="file" className="form-control" onChange={onFileChange} />
                         </div>
                     </div>
                     <button type="submit" className="btn btn-primary m-4">Agregar</button>

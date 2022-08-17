@@ -11,15 +11,16 @@ export default function LeftMenu() {
                 <li>
                     <a href="/expenses">Gastos</a>
                 </li>
-                <li>
+                
+                {/* <li>
                     <a href="/charges">Cobros</a>
-                </li>
+                </li> */}
                 <li>
                     <a href="/messages">Mensajes</a>
                 </li>
-                <li>
+                {/* <li>
                     <a href="/account">Mi Cuenta</a>
-                </li>
+                </li> */}
             </ul>
 
             <ul className="list-unstyled CTAs">
