@@ -12,8 +12,8 @@ import ContactPage from './pages/ContactPage';
 import Charges from './pages/Charges';
 import Messages from './pages/Messages';
 import Account from './pages/Account';
-import $ from 'jquery'
-import { useEffect } from "react";
+// import $ from 'jquery';
+// import { useEffect } from "react";
 
 function App() {
   /*

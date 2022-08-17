@@ -4,6 +4,7 @@ import {collection, onSnapshot} from 'firebase/firestore';
 
 export default function HomeList() {
   const [buildings, setBuildings] = useState([])
+  const [building, setBuilding] = useState()
 
   useEffect(() => {
     onSnapshot(
@@ -20,12 +21,17 @@ export default function HomeList() {
     );
 }, []);
 
+const handleClick = (item) => {
+  console.log('=>:', item.id);
+};
+
+
   return (
     buildings.length > 0 &&
     <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
           {buildings.map((item) => (
           <div className="col" key={item.id}>
-            <div className="card mb-4 rounded-3 shadow-sm">
+             <div className={`card mb-4 rounded-3 shadow-sm  ${building !== item.id ? "classname" : "text-white bg-success"}`}>
               <div className="card-header py-3">
                 <h4 className="my-0 fw-normal">{item.name}</h4>
               </div>
@@ -35,7 +41,7 @@ export default function HomeList() {
                   <li>{item.street} {item.number}</li>
                   <li>{item.city}</li>
                 </ul>
-                <a type="button" href="/login" className="w-100 btn btn-lg btn-outline-primary">Entrar</a>
+                <button type="button" onClick={()=>handleClick("1")} className="w-100 btn btn-lg btn-outline-primary">Entrar</button>
               </div>
             </div>
           </div>

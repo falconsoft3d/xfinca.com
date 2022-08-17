@@ -23,6 +23,7 @@ export default function DashboardLayout(props) {
                         <span></span>
                     </button>
 
+                    
                     <button className="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i className="fas fa-align-justify"></i>
                     </button>

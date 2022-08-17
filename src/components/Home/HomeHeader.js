@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useEffect, useState} from 'react';
 import {useAuth} from './../../contexts/AuthContext';
 import BtnLogout from '../BtnLogout';
 
@@ -31,17 +31,14 @@ export default function HomeHeader() {
             <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Cobros</a>
             <a className="me-3 py-2 text-dark text-decoration-none" href="/expenses">Mensajes</a>
             <BtnLogout/>
-            
           </nav>
-        }   
-          
-          
-
+        }
 
         </div>
     
         <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
           <h1 className="display-4 fw-normal">XFinca</h1>
+          <p>- {} -</p>
           <p className="fs-5 text-muted">Software de Administración de Finca</p>
         </div>
       </header>
