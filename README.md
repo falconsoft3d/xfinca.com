@@ -22,5 +22,5 @@ Marlon Falcón Hernández | España | Madrid
 
 # Tareas
 ```
-[ ] - Un usuario puede tener varias fincas.   
+[ ] - Un usuario puede tener varias fincas. Tengo que guardar en el usuario las fincas asignadas.
 ```

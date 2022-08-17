@@ -26,10 +26,11 @@ export default function LeftMenu() {
                 <li>
                     <a href="/" className="download">Inicio</a>
                 </li>
-                <br></br>
-                <li>
+                
+                {/* <br></br> */}
+                {/* <li>
                     <a href="/contact" className="article">Contacto</a>
-                </li>
+                </li> */}
             </ul>
         </nav>
   )

@@ -3,8 +3,10 @@ import { db } from "./../../firebase/firebaseConfig";
 import {collection, onSnapshot} from 'firebase/firestore';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateId } from '../../store';
+import {useNavigate} from 'react-router-dom';
 
 export default function HomeList() {
+  const navigate = useNavigate();
   const [buildings, setBuildings] = useState([]);
   // Redux 
   const { id } = useSelector(state => state.building);
@@ -26,8 +28,8 @@ export default function HomeList() {
 }, []);
 
 const handleClick = (item) => {
-  console.log('=>:', item.id);
-  dispatch(updateId(item.id))
+  dispatch(updateId(item.id));
+  navigate('/expenses');
 };
 
 
