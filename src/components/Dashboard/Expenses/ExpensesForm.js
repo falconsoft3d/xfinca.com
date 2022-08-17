@@ -6,6 +6,9 @@ import { useSelector } from 'react-redux';
 import {useAuth} from './../../../contexts/AuthContext';
 
 export default function ExpensesForm() {
+  // let defaultDate = new Date()
+  /// defaultDate.setDate(defaultDate.getDate() + 0)
+
   const [name, setName] = useState('');
   const [amount, setAmount] = useState(0);
   const [date, setDate] = useState('');
