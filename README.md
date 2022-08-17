@@ -23,11 +23,14 @@ Marlon Falcón Hernández | España | Madrid
 # Tareas
 ```
 [ ] - Un usuario puede tener varias fincas. Tengo que guardar en el usuario las fincas asignadas.
-[ ] - Poder subir adjuntos en Gastos
-[ ] - Poder Chatear con otros usuarios
-[ ] - Subir los Cobros de dividendo de cada usuario
-[ ] - Poder cambiar la contraseña
-[ ] - Deploy
+[ ] - Poder subir adjuntos en Gastos.
+[ ] - Poder Chatear con otros usuarios.
+[ ] - Subir los Cobros de dividendo de cada usuario.
+[ ] - Poder cambiar la. 
+[ ] - Total de Gastos.
+[ ] - Total de Cobros.
+[ ] - Solo el admin puede escribir.
+[ ] - CI-CD
 ```
 
 # Code Sample [ Firebase read list of documento with query ]
